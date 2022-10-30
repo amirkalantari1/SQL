@@ -1,0 +1,38 @@
+CREATE TABLE bookstore(
+id INTEGER PRIMARY KEY,
+name TEXT,
+year INTEGER,
+ranking INTEGER,
+isbn INTEGER);
+
+INSERT INTO bookstore VALUES (1,"a",2010,2,50);
+INSERT INTO bookstore VALUES (2,"ae",2000,5,52);
+INSERT INTO bookstore VALUES (3,"ac",2021,1,54);
+INSERT INTO bookstore VALUES (4,"ad",2011,3,51);
+INSERT INTO bookstore VALUES (5,"af",2020,22,33);
+
+INSERT INTO bookstore VALUES (6,"a",2010,8,50);
+INSERT INTO bookstore VALUES (7,"aee",2000,10,52);
+INSERT INTO bookstore VALUES (8,"acd",2021,6,54);
+INSERT INTO bookstore VALUES (9,"add",2011,7,51);
+INSERT INTO bookstore VALUES (10,"afq",2020,9,33);
+
+INSERT INTO bookstore VALUES (11,"a",1994,2,50);
+INSERT INTO bookstore VALUES (12,"ae",2030,5,52);
+INSERT INTO bookstore VALUES (13,"aEc",2021,13,54);
+INSERT INTO bookstore VALUES (14,"ad",1943,3,51);
+INSERT INTO bookstore VALUES (15,"af",1970,22,33);
+
+--display the database ordered by year. 
+SELECT * FROM bookstore
+ORDER BY year desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(year) "avg year book"
+FROM bookstore; 
+
+--what are the most 5 popular items? 
+SELECT name, year, ranking
+FROM bookstore
+order by ranking desc
+limit 5;  
